@@ -6,22 +6,72 @@
     <title>About Us | Adspire</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-    <style>
+        <style>
         :root {
             --brand-primary: #0A0A0A;
             --brand-accent: #FF4D00;
             --brand-secondary: #FFFFFF;
         }
-        body { background-color: var(--brand-primary); color: var(--brand-secondary); font-family: 'Inter', sans-serif; }
+        
+        body {
+            background-color: var(--brand-primary);
+            color: var(--brand-secondary);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
         .font-heading { font-family: 'Montserrat', sans-serif; }
-        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .btn-primary { background-color: var(--brand-accent); padding: 0.75rem 2rem; border-radius: 9999px; font-weight: 700; transition: all 0.3s; }
-        .btn-primary:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(255, 77, 0, 0.4); }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-dark {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .btn-primary {
+            background-color: var(--brand-accent);
+            padding: 1rem 2.5rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            transition: all 0.3s;
+            box-shadow: 0 0 20px rgba(255, 77, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(255, 77, 0, 0.5);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #fff, #888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Portfolio Grid Overlays */
+        .portfolio-item:hover .overlay {
+            opacity: 1;
+        }
     </style>
 </head>
 <body class="overflow-x-hidden">
 
-    <!-- Navigation Header -->
+        <!-- Navigation Header -->
     <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-header">
         <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto">
             <a href="index.html" class="flex items-center gap-4">
@@ -54,15 +104,18 @@
         </div>
     </header>
 
-    <script>
+        <script>
         const header = document.getElementById('main-header');
         const mobileToggle = document.getElementById('mobile-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileClose = document.getElementById('mobile-close');
 
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) { header.classList.add('glass', 'py-2'); } 
-            else { header.classList.remove('glass', 'py-2'); }
+            if (window.scrollY > 50) {
+                header.classList.add('glass', 'py-2');
+            } else {
+                header.classList.remove('glass', 'py-2');
+            }
         });
 
         mobileToggle.addEventListener('click', () => {
@@ -80,8 +133,8 @@
     <!-- About Hero -->
     <section class="py-24 px-6 text-center">
         <div class="max-w-4xl mx-auto">
-            <h1 class="text-3xl md:text-5xl font-heading font-extrabold mb-8">The Vision Behind <span class="text-[#FF4D00]">Adspire</span></h1>
-            <p class="text-xl text-gray-400 leading-relaxed">
+            <h1 class="text-3xl md:text-5xl font-heading font-extrabold mb-8 tracking-tight">The Vision Behind <span class="text-[#FF4D00]">Adspire</span></h1>
+            <p class="text-xl leading-relaxed text-gray-400">
                 Born at the intersection of design and technology, Adspire is more than a creative agency. We are a growth partner for brands that refuse to settle for the ordinary.
             </p>
         </div>
@@ -92,23 +145,23 @@
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="glass p-10 rounded-3xl">
                 <h3 class="text-2xl font-bold mb-4 text-[#FF4D00]">Our Mission</h3>
-                <p class="text-gray-400">To elevate global brands through uncompromising design excellence and strategic AI integration.</p>
+                <p class="leading-relaxed text-gray-400">To elevate global brands through uncompromising design excellence and strategic AI integration.</p>
             </div>
             <div class="glass p-10 rounded-3xl">
                 <h3 class="text-2xl font-bold mb-4 text-[#FF4D00]">Our Values</h3>
-                <p class="text-gray-400">Innovation, transparency, and a relentless focus on delivering measurable growth for our clients.</p>
+                <p class="leading-relaxed text-gray-400">Innovation, transparency, and a relentless focus on delivering measurable growth for our clients.</p>
             </div>
             <div class="glass p-10 rounded-3xl">
                 <h3 class="text-2xl font-bold mb-4 text-[#FF4D00]">Our Tech</h3>
-                <p class="text-gray-400">Leveraging the latest in AI Video, Next.js architecture, and data-driven marketing engines.</p>
+                <p class="leading-relaxed text-gray-400">Leveraging the latest in AI Video, Next.js architecture, and data-driven marketing engines.</p>
             </div>
         </div>
     </section>
 
     <!-- The Adspire Story -->
     <section class="py-24 px-6 bg-[#050505]">
-        <div class="max-w-4xl mx-auto text-gray-300 space-y-10 leading-relaxed text-lg">
-            <h2 class="text-4xl md:text-5xl font-heading font-bold mb-12 text-white">The Adspire Story: Forging a New Path</h2>
+        <div class="max-w-3xl mx-auto text-gray-400 space-y-10 leading-relaxed text-lg">
+            <h2 class="text-4xl md:text-5xl font-heading font-bold mb-12 text-white tracking-tight">The Adspire Story: Forging a New Path</h2>
             
             <p>Every great agency has an origin story, and ours begins with a simple, yet profound realization: the digital landscape is littered with beautiful, but fundamentally ineffective websites and marketing campaigns. Time and time again, we witnessed incredible businesses with truly life-changing products and services failing to gain traction online. They were hiring traditional graphic designers who didn't understand the intricacies of digital conversion, or they were working with highly technical developers who lacked the creative vision to build something truly memorable. We saw a massive, glaring gap in the market for an agency that could seamlessly blend high-end, emotional design with ruthless, data-driven strategy and cutting-edge technology.</p>
 
@@ -126,10 +179,20 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-20 px-6 border-t border-white/5 mt-20">
-        <div class="max-w-7xl mx-auto text-center">
-            <p class="text-gray-600">© 2026 Adspire Creative Agency.</p>
+        <!-- Footer -->
+    <footer class="py-20 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-2xl font-heading font-extrabold tracking-tighter">
+                <span class="text-[#FF4D00]">AD</span>SPIRE
+            </div>
+            <div class="flex gap-10 text-sm text-gray-500 font-bold uppercase tracking-widest">
+                <a href="design.html" class="hover:text-white transition-colors">Design</a>
+                <a href="services.html" class="hover:text-white transition-colors">Services</a>
+                <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+            </div>
+            <div class="text-gray-600 text-sm">
+                © 2026 Adspire Creative Agency.
+            </div>
         </div>
     </footer>
 

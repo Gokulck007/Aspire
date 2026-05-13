@@ -7,18 +7,72 @@
     <meta name="description" content="Adspire offers premium creative services including Graphic Design, AI Video Production, Marketing Strategy, SEO, and Web Development.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-    <style>
-        :root { --brand-primary: #0A0A0A; --brand-accent: #FF4D00; --brand-secondary: #FFFFFF; }
-        body { background-color: var(--brand-primary); color: var(--brand-secondary); font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        <style>
+        :root {
+            --brand-primary: #0A0A0A;
+            --brand-accent: #FF4D00;
+            --brand-secondary: #FFFFFF;
+        }
+        
+        body {
+            background-color: var(--brand-primary);
+            color: var(--brand-secondary);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
         .font-heading { font-family: 'Montserrat', sans-serif; }
-        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .service-card:hover { border-color: var(--brand-accent); transform: translateY(-5px); }
-        .text-accent { color: var(--brand-accent); }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-dark {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .btn-primary {
+            background-color: var(--brand-accent);
+            padding: 1rem 2.5rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            transition: all 0.3s;
+            box-shadow: 0 0 20px rgba(255, 77, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(255, 77, 0, 0.5);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #fff, #888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Portfolio Grid Overlays */
+        .portfolio-item:hover .overlay {
+            opacity: 1;
+        }
     </style>
 </head>
 <body class="overflow-x-hidden">
 
-    <!-- Navigation Header -->
+        <!-- Navigation Header -->
     <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-header">
         <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto">
             <a href="index.html" class="flex items-center gap-4">
@@ -51,15 +105,18 @@
         </div>
     </header>
 
-    <script>
+        <script>
         const header = document.getElementById('main-header');
         const mobileToggle = document.getElementById('mobile-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileClose = document.getElementById('mobile-close');
 
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) { header.classList.add('glass', 'py-2'); } 
-            else { header.classList.remove('glass', 'py-2'); }
+            if (window.scrollY > 50) {
+                header.classList.add('glass', 'py-2');
+            } else {
+                header.classList.remove('glass', 'py-2');
+            }
         });
 
         mobileToggle.addEventListener('click', () => {
@@ -77,15 +134,15 @@
     <!-- Services Hero -->
     <section class="py-24 px-6 text-center">
         <div class="max-w-4xl mx-auto">
-            <h1 class="text-3xl md:text-5xl font-heading font-extrabold mb-8">Comprehensive <span class="text-[#FF4D00]">Solutions</span></h1>
-            <p class="text-xl text-gray-400">From initial design to global scale, we provide the technical and creative engine to elevate your brand.</p>
+            <h1 class="text-3xl md:text-5xl font-heading font-extrabold mb-8 tracking-tight">Comprehensive <span class="text-[#FF4D00]">Solutions</span></h1>
+            <p class="text-xl leading-relaxed text-gray-400">From initial design to global scale, we provide the technical and creative engine to elevate your brand.</p>
         </div>
     </section>
 
     <!-- Introduction to Services -->
     <section class="py-20 px-6 bg-[#050505]">
-        <div class="max-w-4xl mx-auto text-gray-300 space-y-10 leading-relaxed text-lg">
-            <h2 class="text-4xl md:text-5xl font-heading font-bold mb-12 text-white">The Intersection of Art and Science</h2>
+        <div class="max-w-3xl mx-auto text-gray-400 space-y-10 leading-relaxed text-lg">
+            <h2 class="text-4xl md:text-5xl font-heading font-bold mb-12 text-white tracking-tight">The Intersection of Art and Science</h2>
             
             <p>Welcome to the engine room of your future growth. At Adspire, we do not view our services as isolated silos; rather, we see them as interconnected gears within a high-performance machine. In today’s highly competitive digital landscape, having a beautiful website with no traffic is just as detrimental as having incredible traffic driven to a confusing, ugly website. To achieve true market dominance, you need a holistic approach that seamlessly integrates high-end creative design with rigorous, data-backed marketing strategies and flawless technical execution.</p>
 
@@ -110,8 +167,8 @@
             <!-- Service 1: Design -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
-                    <h2 class="text-4xl font-heading font-bold mb-6">01. Graphic Design & Branding</h2>
-                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                    <h2 class="text-4xl font-heading font-bold mb-6 tracking-tight">01. Graphic Design & Branding</h2>
+                    <p class="leading-relaxed text-gray-400">
                         Authoritative visual identities built on market strategy and psychological insights.
                     </p>
                     <ul class="grid grid-cols-2 gap-4 text-sm font-bold uppercase tracking-wider text-white/70">
@@ -129,8 +186,8 @@
             <!-- Service 2: AI Video -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center lg:flex-row-reverse">
                 <div class="lg:order-2">
-                    <h2 class="text-4xl font-heading font-bold mb-6">02. AI Video Production</h2>
-                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                    <h2 class="text-4xl font-heading font-bold mb-6 tracking-tight">02. AI Video Production</h2>
+                    <p class="leading-relaxed text-gray-400">
                         Cinematic 4K AI motion assets that capture attention like traditional video can't.
                     </p>
                     <ul class="grid grid-cols-2 gap-4 text-sm font-bold uppercase tracking-wider text-white/70">
@@ -148,8 +205,8 @@
             <!-- Service 3: Growth Engine -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
-                    <h2 class="text-4xl font-heading font-bold mb-6">03. Marketing & Strategy</h2>
-                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                    <h2 class="text-4xl font-heading font-bold mb-6 tracking-tight">03. Marketing & Strategy</h2>
+                    <p class="leading-relaxed text-gray-400">
                         Data-driven growth engines turning traffic into high-value clients via advanced funnels.
                     </p>
                     <ul class="grid grid-cols-2 gap-4 text-sm font-bold uppercase tracking-wider text-white/70">
@@ -167,8 +224,8 @@
             <!-- Service 4: Web Dev -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center lg:flex-row-reverse">
                 <div class="lg:order-2">
-                    <h2 class="text-4xl font-heading font-bold mb-6">04. Next-Gen Web Development</h2>
-                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                    <h2 class="text-4xl font-heading font-bold mb-6 tracking-tight">04. Next-Gen Web Development</h2>
+                    <p class="leading-relaxed text-gray-400">
                         Ultra-fast digital architecture optimized for modern web and 2026 AI-search standards.
                     </p>
                     <ul class="grid grid-cols-2 gap-4 text-sm font-bold uppercase tracking-wider text-white/70">
@@ -186,10 +243,20 @@
         </div>
     </section>
 
-    <!-- Footer -->
+        <!-- Footer -->
     <footer class="py-20 px-6 border-t border-white/5">
-        <div class="max-w-7xl mx-auto text-center text-gray-600">
-            © 2026 Adspire Creative Agency.
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-2xl font-heading font-extrabold tracking-tighter">
+                <span class="text-[#FF4D00]">AD</span>SPIRE
+            </div>
+            <div class="flex gap-10 text-sm text-gray-500 font-bold uppercase tracking-widest">
+                <a href="design.html" class="hover:text-white transition-colors">Design</a>
+                <a href="services.html" class="hover:text-white transition-colors">Services</a>
+                <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+            </div>
+            <div class="text-gray-600 text-sm">
+                © 2026 Adspire Creative Agency.
+            </div>
         </div>
     </footer>
 

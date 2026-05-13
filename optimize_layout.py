@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Graphic Design & Branding | Adspire - Design, Strategy, & Growth</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-        <style>
+import os
+import glob
+import re
+
+html_files = glob.glob('*.html')
+
+# Master components from index.html (cleaned up)
+master_style = """    <style>
         :root {
             --brand-primary: #0A0A0A;
             --brand-accent: #FF4D00;
@@ -67,11 +66,9 @@
         .portfolio-item:hover .overlay {
             opacity: 1;
         }
-    </style>
-</head>
-<body class="overflow-x-hidden">
+    </style>"""
 
-        <!-- Navigation Header -->
+master_header = """    <!-- Navigation Header -->
     <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-header">
         <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto">
             <a href="index.html" class="flex items-center gap-4">
@@ -102,9 +99,9 @@
             <a href="portfolio.html" class="hover:text-[#FF4D00]">Portfolio</a>
             <a href="contact.html" class="hover:text-[#FF4D00]">Contact</a>
         </div>
-    </header>
+    </header>"""
 
-        <script>
+master_script = """    <script>
         const header = document.getElementById('main-header');
         const mobileToggle = document.getElementById('mobile-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -126,42 +123,9 @@
             mobileMenu.classList.add('opacity-0', 'pointer-events-none');
             document.body.style.overflow = '';
         });
-    </script>
+    </script>"""
 
-    <div class="h-24"></div>
-
-    <section class="py-24 px-6 text-center">
-        <div class="max-w-4xl mx-auto">
-            <h1 class="text-3xl md:text-5xl font-heading font-extrabold mb-8 tracking-tight">Graphic <span class="text-[#FF4D00]">Design</span></h1>
-            <p class="text-xl leading-relaxed text-gray-400">Premium branding, logo systems, and packaging that command authority.</p>
-        </div>
-    </section>
-
-    <!-- Deep Dive Content -->
-    <section class="py-20 px-6">
-        <div class="max-w-4xl mx-auto space-y-10 text-gray-300 text-lg leading-relaxed text-left">
-            <h2 class="text-3xl font-bold text-white mb-6">The Power of Visual Authority</h2>
-            <p>In a world saturated with digital noise, your brand's visual identity is its most valuable asset. It is the silent ambassador of your business, communicating your core values, your market positioning, and your commitment to excellence before a single word is ever read. At Adspire, we believe that graphic design is not merely about creating aesthetically pleasing images; it is a strategic tool used to command authority and engineer trust. We craft visual identities that don't just look good—they perform.</p>
-
-            <h3 class="text-2xl font-bold text-[#FF4D00] mt-12 mb-6">Psychology-Driven Design</h3>
-            <p>Our approach to graphic design and branding is fundamentally rooted in human psychology. We understand that consumers make purchasing decisions based primarily on emotion, which they later justify with logic. Every color palette we select, every typographic system we deploy, and every layout we construct is meticulously chosen to evoke a specific emotional response from your target demographic. We want them to feel a sense of prestige, security, and excitement the moment they encounter your brand. This psychological alignment is what transforms casual browsers into fiercely loyal brand advocates.</p>
-
-            <h3 class="text-2xl font-bold text-[#FF4D00] mt-12 mb-6">Comprehensive Brand Systems</h3>
-            <p>We do not just design isolated logos; we architect comprehensive, scalable brand systems. A truly powerful brand maintains strict visual consistency across every conceivable touchpoint. Whether a customer is holding your premium packaging in their hands, scrolling past your ad on social media, or navigating your corporate website, they should experience a unified and cohesive aesthetic. We provide our clients with extensive, highly detailed brand guidelines that serve as the "true north" for all future marketing and product development efforts, ensuring your visual authority is never diluted.</p>
-
-            <h3 class="text-2xl font-bold text-[#FF4D00] mt-12 mb-6">From Concept to Global Execution</h3>
-            <p>Our process begins with a deep dive into your business model, your competitive landscape, and your long-term objectives. We collaborate closely with your executive team to extract the true essence of your company. From there, our award-winning designers conceptualize multiple visual directions, refining and iterating based on rigorous market feedback. Once the core identity is established, we seamlessly roll it out across all necessary mediums. From stunning product packaging that jumps off the retail shelf to sophisticated corporate collateral that wins multi-million dollar pitches, we handle every aspect of your visual presence.</p>
-
-            <h3 class="text-2xl font-bold text-[#FF4D00] mt-12 mb-6">The Return on Design Investment</h3>
-            <p>Investing in premium graphic design is not an expense; it is a revenue-generating strategy. A high-end visual identity allows you to command premium pricing, reduces customer acquisition costs by increasing ad click-through rates, and significantly boosts overall customer lifetime value by fostering deep brand loyalty. When you look like the undisputed leader in your industry, the market will treat you like one. Partner with Adspire, and let us elevate your brand to the pinnacle of visual excellence.</p>
-            
-            <div class="mt-16 text-center">
-                <a href="contact.html" class="inline-block bg-[#FF4D00] text-white px-10 py-5 rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,77,0,0.3)]">Discuss Your Branding Project</a>
-            </div>
-        </div>
-    </section>
-
-        <!-- Footer -->
+master_footer = """    <!-- Footer -->
     <footer class="py-20 px-6 border-t border-white/5">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
             <div class="text-2xl font-heading font-extrabold tracking-tighter">
@@ -176,7 +140,33 @@
                 © 2026 Adspire Creative Agency.
             </div>
         </div>
-    </footer>
+    </footer>"""
 
-</body>
-</html>
+for file in html_files:
+    with open(file, 'r', encoding='utf-8') as f:
+        content = f.read()
+    
+    # 1. Replace Header
+    content = re.sub(r'<!-- Navigation Header -->.*?<!-- Mobile Menu Overlay -->.*?</div>\s*</header>', master_header, content, flags=re.DOTALL)
+    # 2. Replace Footer
+    content = re.sub(r'<!-- Footer -->.*?</footer>', master_footer, content, flags=re.DOTALL)
+    # 3. Replace Script
+    content = re.sub(r'<script>\s*const header = document\.getElementById\(.main-header.\);.*?</script>', master_script, content, flags=re.DOTALL)
+    # 4. Replace Style
+    content = re.sub(r'<style>.*?</style>', master_style, content, flags=re.DOTALL)
+
+    # 5. Typography Optimizations
+    # Add tracking-tight to headings if not present
+    content = re.sub(r'(<h[123][^>]*class="[^"]*font-heading[^"]*)(")', r'\1 tracking-tight\2', content)
+    # Ensure paragraphs have leading-relaxed and text-gray-400
+    content = re.sub(r'(<p[^>]*class="[^"]*)(text-gray-400[^"]*|text-gray-300[^"]*)(")', r'\1leading-relaxed text-gray-400\3', content)
+    # Cap long paragraph containers at max-w-3xl for better readability
+    content = content.replace('max-w-4xl mx-auto text-gray-300', 'max-w-3xl mx-auto text-gray-400')
+
+    # 6. Global Branding fix
+    content = content.replace("ADADSPIRE", "ADSPIRE")
+
+    with open(file, 'w', encoding='utf-8') as f:
+        f.write(content)
+
+print(f"Successfully optimized and unified {len(html_files)} HTML files.")

@@ -6,20 +6,72 @@
     <title>Contact Us | Adspire</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-    <style>
-        :root { --brand-primary: #0A0A0A; --brand-accent: #FF4D00; --brand-secondary: #FFFFFF; }
-        body { background-color: var(--brand-primary); color: var(--brand-secondary); font-family: 'Inter', sans-serif; }
+        <style>
+        :root {
+            --brand-primary: #0A0A0A;
+            --brand-accent: #FF4D00;
+            --brand-secondary: #FFFFFF;
+        }
+        
+        body {
+            background-color: var(--brand-primary);
+            color: var(--brand-secondary);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
         .font-heading { font-family: 'Montserrat', sans-serif; }
-        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .btn-primary { background-color: var(--brand-accent); padding: 1rem 3rem; border-radius: 9999px; font-weight: 700; transition: all 0.3s; width: 100%; }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(255, 77, 0, 0.3); }
-        input, textarea { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 1rem; padding: 1rem; color: white; outline: none; }
-        input:focus, textarea:focus { border-color: var(--brand-accent); }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-dark {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .btn-primary {
+            background-color: var(--brand-accent);
+            padding: 1rem 2.5rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            transition: all 0.3s;
+            box-shadow: 0 0 20px rgba(255, 77, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(255, 77, 0, 0.5);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #fff, #888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Portfolio Grid Overlays */
+        .portfolio-item:hover .overlay {
+            opacity: 1;
+        }
     </style>
 </head>
 <body class="overflow-x-hidden">
 
-    <!-- Navigation Header -->
+        <!-- Navigation Header -->
     <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-header">
         <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto">
             <a href="index.html" class="flex items-center gap-4">
@@ -52,15 +104,18 @@
         </div>
     </header>
 
-    <script>
+        <script>
         const header = document.getElementById('main-header');
         const mobileToggle = document.getElementById('mobile-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileClose = document.getElementById('mobile-close');
 
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) { header.classList.add('glass', 'py-2'); } 
-            else { header.classList.remove('glass', 'py-2'); }
+            if (window.scrollY > 50) {
+                header.classList.add('glass', 'py-2');
+            } else {
+                header.classList.remove('glass', 'py-2');
+            }
         });
 
         mobileToggle.addEventListener('click', () => {
@@ -78,8 +133,8 @@
     <section class="py-24 px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
             <div>
-                <h1 class="text-3xl md:text-5xl font-heading font-extrabold mb-8">Let's <span class="text-[#FF4D00]">Ignite</span> Your Brand.</h1>
-                <p class="text-xl text-gray-400 mb-12">
+                <h1 class="text-3xl md:text-5xl font-heading font-extrabold mb-8 tracking-tight">Let's <span class="text-[#FF4D00]">Ignite</span> Your Brand.</h1>
+                <p class="text-xl leading-relaxed text-gray-400">
                     Ready to elevate your digital presence? Reach out and let's discuss how we can engineer your growth.
                 </p>
                 
@@ -135,10 +190,20 @@
         </div>
     </section>
 
-    <!-- Footer -->
+        <!-- Footer -->
     <footer class="py-20 px-6 border-t border-white/5">
-        <div class="max-w-7xl mx-auto text-center text-gray-600">
-            © 2026 Adspire Creative Agency.
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-2xl font-heading font-extrabold tracking-tighter">
+                <span class="text-[#FF4D00]">AD</span>SPIRE
+            </div>
+            <div class="flex gap-10 text-sm text-gray-500 font-bold uppercase tracking-widest">
+                <a href="design.html" class="hover:text-white transition-colors">Design</a>
+                <a href="services.html" class="hover:text-white transition-colors">Services</a>
+                <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+            </div>
+            <div class="text-gray-600 text-sm">
+                © 2026 Adspire Creative Agency.
+            </div>
         </div>
     </footer>
 
