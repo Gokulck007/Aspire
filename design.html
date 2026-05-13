@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphic Design & Branding | Aspire - Design, Strategy, & Growth</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --brand-primary: #0A0A0A; --brand-accent: #FF4D00; --brand-secondary: #FFFFFF; }
+        body { background-color: var(--brand-primary); color: var(--brand-secondary); font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .font-heading { font-family: 'Montserrat', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-header">
+        <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto">
+            <a href="preview.html" class="flex items-center gap-4">
+                <img src="logo.png" alt="Aspire Logo" class="h-10 w-auto">
+                <span class="text-2xl font-heading font-extrabold tracking-tighter text-white">ASPIRE</span>
+            </a>
+            <div class="hidden md:flex items-center gap-10 text-sm font-bold uppercase tracking-widest text-gray-400">
+                <a href="preview.html" class="hover:text-white transition-colors">Home</a>
+                <a href="about.html" class="hover:text-white transition-colors">About</a>
+                <a href="services.html" class="hover:text-white transition-colors">Services</a>
+                <a href="portfolio.html" class="hover:text-white transition-colors">Portfolio</a>
+                <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+                <a href="contact.html" class="bg-[#FF4D00] text-white px-6 py-2 rounded-full hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,77,0,0.3)]">Get Started</a>
+            </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-white" id="mobile-toggle">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden fixed inset-0 bg-black z-50 flex flex-col items-center justify-center gap-8 text-2xl font-bold uppercase tracking-widest transition-all">
+            <button class="absolute top-6 right-6 text-white" id="mobile-close">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <a href="preview.html" class="hover:text-[#FF4D00]">Home</a>
+            <a href="about.html" class="hover:text-[#FF4D00]">About</a>
+            <a href="services.html" class="hover:text-[#FF4D00]">Services</a>
+            <a href="portfolio.html" class="hover:text-[#FF4D00]">Portfolio</a>
+            <a href="contact.html" class="hover:text-[#FF4D00]">Contact</a>
+        </div>
+    </header>
+
+    <script>
+        const header = document.getElementById('main-header');
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileClose = document.getElementById('mobile-close');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { header.classList.add('glass', 'py-2'); } 
+            else { header.classList.remove('glass', 'py-2'); }
+        });
+
+        mobileToggle.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
+        mobileClose.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    </script>
+
+    <div class="h-24"></div>
+
+    <section class="py-24 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-heading font-extrabold mb-8">Graphic <span class="text-[#FF4D00]">Design</span></h1>
+            <p class="text-xl text-gray-400">Premium branding, logo systems, and packaging that command authority.</p>
+        </div>
+    </section>
+
+    <!-- Deep Dive Content -->
+    <section class="py-20 px-6">
+        <div class="max-w-4xl mx-auto space-y-10 text-gray-300 text-lg leading-relaxed text-left">
+            <h2 class="text-3xl font-bold text-white mb-6">The Power of Visual Authority</h2>
+            <p>In a world saturated with digital noise, your brand's visual identity is its most valuable asset. It is the silent ambassador of your business, communicating your core values, your market positioning, and your commitment to excellence before a single word is ever read. At Aspire, we believe that graphic design is not merely about creating aesthetically pleasing images; it is a strategic tool used to command authority and engineer trust. We craft visual identities that don't just look good—they perform.</p>
+
+            <h3 class="text-2xl font-bold text-[#FF4D00] mt-12 mb-6">Psychology-Driven Design</h3>
+            <p>Our approach to graphic design and branding is fundamentally rooted in human psychology. We understand that consumers make purchasing decisions based primarily on emotion, which they later justify with logic. Every color palette we select, every typographic system we deploy, and every layout we construct is meticulously chosen to evoke a specific emotional response from your target demographic. We want them to feel a sense of prestige, security, and excitement the moment they encounter your brand. This psychological alignment is what transforms casual browsers into fiercely loyal brand advocates.</p>
+
+            <h3 class="text-2xl font-bold text-[#FF4D00] mt-12 mb-6">Comprehensive Brand Systems</h3>
+            <p>We do not just design isolated logos; we architect comprehensive, scalable brand systems. A truly powerful brand maintains strict visual consistency across every conceivable touchpoint. Whether a customer is holding your premium packaging in their hands, scrolling past your ad on social media, or navigating your corporate website, they should experience a unified and cohesive aesthetic. We provide our clients with extensive, highly detailed brand guidelines that serve as the "true north" for all future marketing and product development efforts, ensuring your visual authority is never diluted.</p>
+
+            <h3 class="text-2xl font-bold text-[#FF4D00] mt-12 mb-6">From Concept to Global Execution</h3>
+            <p>Our process begins with a deep dive into your business model, your competitive landscape, and your long-term objectives. We collaborate closely with your executive team to extract the true essence of your company. From there, our award-winning designers conceptualize multiple visual directions, refining and iterating based on rigorous market feedback. Once the core identity is established, we seamlessly roll it out across all necessary mediums. From stunning product packaging that jumps off the retail shelf to sophisticated corporate collateral that wins multi-million dollar pitches, we handle every aspect of your visual presence.</p>
+
+            <h3 class="text-2xl font-bold text-[#FF4D00] mt-12 mb-6">The Return on Design Investment</h3>
+            <p>Investing in premium graphic design is not an expense; it is a revenue-generating strategy. A high-end visual identity allows you to command premium pricing, reduces customer acquisition costs by increasing ad click-through rates, and significantly boosts overall customer lifetime value by fostering deep brand loyalty. When you look like the undisputed leader in your industry, the market will treat you like one. Partner with Aspire, and let us elevate your brand to the pinnacle of visual excellence.</p>
+            
+            <div class="mt-16 text-center">
+                <a href="contact.html" class="inline-block bg-[#FF4D00] text-white px-10 py-5 rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,77,0,0.3)]">Discuss Your Branding Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 px-6 border-t border-white/5 mt-20">
+        <div class="max-w-7xl mx-auto text-center text-gray-600">
+            © 2026 Aspire Creative Agency.
+        </div>
+    </footer>
+
+</body>
+</html>

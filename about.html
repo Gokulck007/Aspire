@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Aspire</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-primary: #0A0A0A;
+            --brand-accent: #FF4D00;
+            --brand-secondary: #FFFFFF;
+        }
+        body { background-color: var(--brand-primary); color: var(--brand-secondary); font-family: 'Inter', sans-serif; }
+        .font-heading { font-family: 'Montserrat', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .btn-primary { background-color: var(--brand-accent); padding: 0.75rem 2rem; border-radius: 9999px; font-weight: 700; transition: all 0.3s; }
+        .btn-primary:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(255, 77, 0, 0.4); }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-header">
+        <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto">
+            <a href="preview.html" class="flex items-center gap-4">
+                <img src="logo.png" alt="Aspire Logo" class="h-10 w-auto">
+                <span class="text-2xl font-heading font-extrabold tracking-tighter text-white">ASPIRE</span>
+            </a>
+            <div class="hidden md:flex items-center gap-10 text-sm font-bold uppercase tracking-widest text-gray-400">
+                <a href="preview.html" class="hover:text-white transition-colors">Home</a>
+                <a href="about.html" class="hover:text-white transition-colors">About</a>
+                <a href="services.html" class="hover:text-white transition-colors">Services</a>
+                <a href="portfolio.html" class="hover:text-white transition-colors">Portfolio</a>
+                <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+                <a href="contact.html" class="bg-[#FF4D00] text-white px-6 py-2 rounded-full hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,77,0,0.3)]">Get Started</a>
+            </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-white" id="mobile-toggle">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden fixed inset-0 bg-black z-50 flex flex-col items-center justify-center gap-8 text-2xl font-bold uppercase tracking-widest transition-all">
+            <button class="absolute top-6 right-6 text-white" id="mobile-close">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <a href="preview.html" class="hover:text-[#FF4D00]">Home</a>
+            <a href="about.html" class="hover:text-[#FF4D00]">About</a>
+            <a href="services.html" class="hover:text-[#FF4D00]">Services</a>
+            <a href="portfolio.html" class="hover:text-[#FF4D00]">Portfolio</a>
+            <a href="contact.html" class="hover:text-[#FF4D00]">Contact</a>
+        </div>
+    </header>
+
+    <script>
+        const header = document.getElementById('main-header');
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileClose = document.getElementById('mobile-close');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { header.classList.add('glass', 'py-2'); } 
+            else { header.classList.remove('glass', 'py-2'); }
+        });
+
+        mobileToggle.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
+        mobileClose.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    </script>
+
+    <div class="h-24"></div> <!-- Spacer for fixed header -->
+
+    <!-- About Hero -->
+    <section class="py-24 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-heading font-extrabold mb-8">The Vision Behind <span class="text-[#FF4D00]">Aspire</span></h1>
+            <p class="text-xl text-gray-400 leading-relaxed">
+                Born at the intersection of design and technology, Aspire is more than a creative agency. We are a growth partner for brands that refuse to settle for the ordinary.
+            </p>
+        </div>
+    </section>
+
+    <!-- Mission -->
+    <section class="py-20 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="glass p-10 rounded-3xl">
+                <h3 class="text-2xl font-bold mb-4 text-[#FF4D00]">Our Mission</h3>
+                <p class="text-gray-400">To elevate global brands through uncompromising design excellence and strategic AI integration.</p>
+            </div>
+            <div class="glass p-10 rounded-3xl">
+                <h3 class="text-2xl font-bold mb-4 text-[#FF4D00]">Our Values</h3>
+                <p class="text-gray-400">Innovation, transparency, and a relentless focus on delivering measurable growth for our clients.</p>
+            </div>
+            <div class="glass p-10 rounded-3xl">
+                <h3 class="text-2xl font-bold mb-4 text-[#FF4D00]">Our Tech</h3>
+                <p class="text-gray-400">Leveraging the latest in AI Video, Next.js architecture, and data-driven marketing engines.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Aspire Story -->
+    <section class="py-24 px-6 bg-[#050505]">
+        <div class="max-w-4xl mx-auto text-gray-300 space-y-10 leading-relaxed text-lg">
+            <h2 class="text-4xl md:text-5xl font-heading font-bold mb-12 text-white">The Aspire Story: Forging a New Path</h2>
+            
+            <p>Every great agency has an origin story, and ours begins with a simple, yet profound realization: the digital landscape is littered with beautiful, but fundamentally ineffective websites and marketing campaigns. Time and time again, we witnessed incredible businesses with truly life-changing products and services failing to gain traction online. They were hiring traditional graphic designers who didn't understand the intricacies of digital conversion, or they were working with highly technical developers who lacked the creative vision to build something truly memorable. We saw a massive, glaring gap in the market for an agency that could seamlessly blend high-end, emotional design with ruthless, data-driven strategy and cutting-edge technology.</p>
+
+            <h3 class="text-2xl font-bold text-[#FF4D00] mt-12 mb-6">Breaking the Mold</h3>
+            <p>And so, Aspire was born. We set out to build something entirely different—a hybrid creative and technical powerhouse designed from the ground up to solve the most complex growth challenges facing modern brands. From day one, our philosophy has been rooted in the belief that design without strategy is just decoration, and strategy without exceptional design is easily ignored. We wanted to build an agency that wouldn't just execute tasks, but would actively partner with our clients to redefine their entire industry. We spent years assembling a dream team of diverse talents: award-winning graphic designers, brilliant growth hackers, visionary AI video producers, and master web developers. The result is a synergistic force capable of executing truly comprehensive digital transformations.</p>
+
+            <h3 class="text-2xl font-bold text-[#FF4D00] mt-12 mb-6">The Power of Empathy in Design</h3>
+            <p>One of our core defining traits is our deep commitment to empathy. We don't just ask our clients what they want; we dig deep to understand what their customers actually *need*. We conduct extensive psychological research and market analysis before we even open up a design program. We believe that the most powerful brands are those that form a genuine emotional connection with their audience. Whether we are redesigning a corporate logo, architecting a complex e-commerce platform, or producing a cinematic 4K video advertisement, our primary goal is always to evoke a specific feeling and drive a specific action. This empathetic approach is what separates a forgettable brand from a truly legendary one.</p>
+
+            <h3 class="text-2xl font-bold text-[#FF4D00] mt-12 mb-6">A Relentless Pursuit of Innovation</h3>
+            <p>The digital world never stops evolving, and neither do we. At Aspire, innovation isn't just a buzzword; it is baked into our operational DNA. We are obsessed with the future. Long before artificial intelligence became mainstream, we were actively exploring how machine learning could revolutionize video production and search engine optimization. We are constantly testing new tech stacks, experimenting with bleeding-edge design trends, and refining our ad algorithms. We do this not just because we are massive tech nerds (though we definitely are), but because we have a fiduciary duty to our clients to provide them with every possible competitive advantage. When you hire Aspire, you are hiring the future.</p>
+
+            <h3 class="text-2xl font-bold text-[#FF4D00] mt-12 mb-6">Our Promise to You</h3>
+            <p>As we continue to grow and scale alongside our incredible partners, our core mission remains completely unchanged. We are here to do the best work of our lives, and we are here to help you achieve yours. We promise to always tell you the truth, even when it's hard. We promise to never settle for "good enough." And we promise to treat your business with the exact same level of care, passion, and obsessive attention to detail as we treat our own. Welcome to the Aspire family. We can't wait to see what we will build together.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 px-6 border-t border-white/5 mt-20">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="text-gray-600">© 2026 Aspire Creative Agency.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

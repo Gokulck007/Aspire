@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aspire | Design. Strategize. Elevate.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-primary: #0A0A0A;
+            --brand-accent: #FF4D00;
+            --brand-secondary: #FFFFFF;
+        }
+        
+        body {
+            background-color: var(--brand-primary);
+            color: var(--brand-secondary);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .font-heading { font-family: 'Montserrat', sans-serif; }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-dark {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .btn-primary {
+            background-color: var(--brand-accent);
+            padding: 1rem 2.5rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            transition: all 0.3s;
+            box-shadow: 0 0 20px rgba(255, 77, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(255, 77, 0, 0.5);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #fff, #888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Portfolio Grid Overlays */
+        .portfolio-item:hover .overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-header">
+        <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto">
+            <a href="preview.html" class="flex items-center gap-4">
+                <img src="logo.png" alt="Aspire Logo" class="h-10 w-auto">
+                <span class="text-2xl font-heading font-extrabold tracking-tighter text-white">ASPIRE</span>
+            </a>
+            <div class="hidden md:flex items-center gap-10 text-sm font-bold uppercase tracking-widest text-gray-400">
+                <a href="preview.html" class="hover:text-white transition-colors">Home</a>
+                <a href="about.html" class="hover:text-white transition-colors">About</a>
+                <a href="services.html" class="hover:text-white transition-colors">Services</a>
+                <a href="portfolio.html" class="hover:text-white transition-colors">Portfolio</a>
+                <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+                <a href="contact.html" class="bg-[#FF4D00] text-white px-6 py-2 rounded-full hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,77,0,0.3)]">Get Started</a>
+            </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-white" id="mobile-toggle">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden fixed inset-0 bg-black z-50 flex flex-col items-center justify-center gap-8 text-2xl font-bold uppercase tracking-widest transition-all">
+            <button class="absolute top-6 right-6 text-white" id="mobile-close">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <a href="preview.html" class="hover:text-[#FF4D00]">Home</a>
+            <a href="about.html" class="hover:text-[#FF4D00]">About</a>
+            <a href="services.html" class="hover:text-[#FF4D00]">Services</a>
+            <a href="portfolio.html" class="hover:text-[#FF4D00]">Portfolio</a>
+            <a href="contact.html" class="hover:text-[#FF4D00]">Contact</a>
+        </div>
+    </header>
+
+    <script>
+        const header = document.getElementById('main-header');
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileClose = document.getElementById('mobile-close');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('glass', 'py-2');
+            } else {
+                header.classList.remove('glass', 'py-2');
+            }
+        });
+
+        mobileToggle.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
+        mobileClose.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    </script>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-orange-600/10 blur-[120px] rounded-full"></div>
+        
+        <div class="relative z-10">
+            <div class="float mb-12 flex justify-center">
+                <!-- Logo -->
+                <svg width="120" height="120" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5" y="5" width="90" height="90" stroke="white" stroke-width="4"/>
+                    <path d="M50 20L80 80H20L50 20Z" fill="#FF4D00"/>
+                    <rect x="35" y="55" width="30" height="25" fill="white"/>
+                </svg>
+            </div>
+            
+            <h1 class="text-5xl md:text-8xl font-heading font-extrabold mb-6 tracking-tight">
+                Design. <span class="text-[#FF4D00]">Strategize.</span> Elevate.
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-10">
+                Aspire is a premier creative agency engineering high-trust brand identities and elite AI-driven video content.
+            </p>
+            
+            <button class="btn-primary">Elevate Your Brand</button>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-30 text-xs tracking-widest uppercase">
+            Scroll to Discover
+        </div>
+    </section>
+
+    <!-- Short Services Section -->
+    <section class="py-24 px-6 bg-[#0A0A0A]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-6xl font-heading font-bold mb-4">Core Expertise</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">High-end creative solutions tailored for brands ready to scale.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="glass p-8 rounded-3xl hover:border-[#FF4D00] transition-all group">
+                    <h3 class="text-xl font-bold mb-4 text-[#FF4D00]">Design</h3>
+                    <p class="text-sm text-gray-500 mb-6">We craft stunning logos and visual identities that tell your unique story and make people fall in love with your brand.</p>
+                    <a href="design.html" class="text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">Learn More →</a>
+                </div>
+                <div class="glass p-8 rounded-3xl hover:border-[#FF4D00] transition-all group">
+                    <h3 class="text-xl font-bold mb-4 text-[#FF4D00]">AI Video</h3>
+                    <p class="text-sm text-gray-500 mb-6">We bring your ideas to life with jaw-dropping, cinema-quality videos powered by the latest AI tech to captivate your audience.</p>
+                    <a href="ai-video.html" class="text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">Learn More →</a>
+                </div>
+                <div class="glass p-8 rounded-3xl hover:border-[#FF4D00] transition-all group">
+                    <h3 class="text-xl font-bold mb-4 text-[#FF4D00]">Growth</h3>
+                    <p class="text-sm text-gray-500 mb-6">We help you find your perfect customers and turn clicks into loyal clients through smart, data-backed marketing strategies.</p>
+                    <a href="growth.html" class="text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">Learn More →</a>
+                </div>
+                <div class="glass p-8 rounded-3xl hover:border-[#FF4D00] transition-all group">
+                    <h3 class="text-xl font-bold mb-4 text-[#FF4D00]">Web Dev</h3>
+                    <p class="text-sm text-gray-500 mb-6">We build lightning-fast, beautifully designed websites that look amazing and are built to thrive in the modern digital era.</p>
+                    <a href="web-dev.html" class="text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="py-32 px-6 bg-[#050505]">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-6xl font-heading font-bold mb-16">Graphic Design Showcase</h2>
+            
+            <div class="glass rounded-3xl overflow-hidden group portfolio-item relative min-h-[800px]">
+                <img src="portfolio_graphic_design.jpg" class="w-full h-auto opacity-80 group-hover:opacity-100 transition-opacity duration-700" alt="Graphic Design Portfolio">
+                <div class="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <span class="text-[#FF4D00] font-bold text-xs uppercase mb-2">Master Portfolio</span>
+                    <h3 class="text-3xl font-bold">Branding, Identity & Strategy</h3>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-gray-500 italic">This showcase features our core expertise in visual identity, packaging, and high-trust branding systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Growth Engine -->
+    <section class="py-32 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div>
+                <h2 class="text-4xl md:text-6xl font-heading font-bold mb-8">Growth Engine</h2>
+                <p class="text-xl text-gray-400 mb-12 leading-relaxed">
+                    We build the strategic layer that ensures your brand doesn't just look good, but dominates its market through data-driven SEO and high-conversion ad strategies.
+                </p>
+                <div class="space-y-6">
+                    <div class="flex items-center gap-6 p-6 glass-dark rounded-2xl">
+                        <div class="text-[#FF4D00] font-bold text-3xl">01</div>
+                        <div>
+                            <h4 class="font-bold">Marketing Strategy</h4>
+                            <p class="text-gray-500">Custom roadmaps for aggressive scaling.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-6 p-6 glass-dark rounded-2xl">
+                        <div class="text-[#FF4D00] font-bold text-3xl">02</div>
+                        <div>
+                            <h4 class="font-bold">SEO Mastery</h4>
+                            <p class="text-gray-500">Optimized for the 2026 AI-search landscape.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="glass rounded-[3rem] aspect-square flex items-center justify-center p-12">
+                <div class="w-full h-full bg-gradient-to-br from-[#FF4D00]/20 to-transparent rounded-[2rem] flex items-center justify-center border border-white/10">
+                    <svg width="200" height="200" viewBox="0 0 24 24" fill="none" stroke="#FF4D00" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="opacity-50 float"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story & Vision -->
+    <section class="py-32 px-6 bg-[#0A0A0A]">
+        <div class="max-w-4xl mx-auto text-gray-300 space-y-10 leading-relaxed text-lg">
+            <h2 class="text-4xl md:text-6xl font-heading font-bold mb-12 text-white">The Aspire Philosophy: Why We Do What We Do</h2>
+            
+            <p>Welcome to Aspire, where we believe that your digital presence is the ultimate reflection of your brand's true potential. In today's hyper-competitive and rapidly evolving digital landscape, it is no longer enough to simply exist online. Your brand must make a statement. It needs to command attention, build unshakable trust, and convert passive observers into fiercely loyal advocates. That is exactly what we do. We don't just build websites or run ads; we engineer comprehensive digital ecosystems designed to elevate your business to unprecedented heights. Whether you are a startup looking to make your mark or an established enterprise ready for your next phase of exponential growth, our team of dedicated experts is here to turn your vision into a stunning reality.</p>
+
+            <h3 class="text-2xl font-bold text-[#FF4D00] mt-12 mb-6">A New Standard for Digital Excellence</h3>
+            <p>At the core of our philosophy is a commitment to absolute excellence. We recognize that every single touchpoint a customer has with your brand—from the very first ad they see on social media to the moment they complete a purchase on your website—matters profoundly. That is why we obsess over the details. We combine cutting-edge technology with timeless design principles to create seamless, intuitive, and highly engaging user experiences. We are constantly exploring the latest trends, from AI-driven search engine optimization to advanced motion graphics, ensuring that our clients are always one step ahead of the curve. When you partner with Aspire, you are not just getting a service provider; you are gaining a strategic ally completely dedicated to your long-term success.</p>
+
+            <h3 class="text-2xl font-bold text-[#FF4D00] mt-12 mb-6">Design That Commands Respect</h3>
+            <p>We believe that great design is not just about making things look pretty; it's about solving complex problems and communicating your core message with crystal clarity. Human beings are inherently visual creatures, and within the first few seconds of encountering your brand, they have already made a subconscious judgment about your credibility and authority. Our design process is deeply rooted in human psychology and market strategy. We meticulously craft premium branding packages, sophisticated logo systems, and elegant packaging that resonate with your target demographic on a profound level. We want your audience to feel a sense of prestige and trust the moment they interact with your visual identity.</p>
+
+            <h3 class="text-2xl font-bold text-[#FF4D00] mt-12 mb-6">The Power of Data-Driven Growth</h3>
+            <p>While a beautiful brand is essential, it must be fueled by a powerful, data-driven growth engine to achieve true commercial success. Hope is not a strategy. We rely on hard data, rigorous testing, and advanced analytics to build marketing campaigns that deliver measurable, high-impact results. Our growth architects specialize in designing high-conversion sales funnels and deploying targeted ad management strategies that cut through the noise. We don't just chase vanity metrics like likes or impressions; we focus relentlessly on the metrics that actually matter to your bottom line: lead generation, customer acquisition cost, and overall return on investment. We turn raw traffic into high-value, long-term clients.</p>
+
+            <h3 class="text-2xl font-bold text-[#FF4D00] mt-12 mb-6">Your Partner in the Future of Business</h3>
+            <p>As we look toward the future, the integration of artificial intelligence and high-performance web architecture will only become more critical. We are deeply passionate about leveraging these next-generation tools to give our clients an unfair advantage. From crafting cinematic 4K AI video productions that capture the imagination to building ultra-fast web architectures optimized for 2026 AI-search standards, we are building the foundation for your future dominance. We invite you to explore our services, review our portfolio, and discover how Aspire can help you break through your current plateau and achieve the extraordinary growth you deserve. Let's build something remarkable together.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-2xl font-heading font-extrabold tracking-tighter">
+                <span class="text-[#FF4D00]">AD</span>ASPIRE
+            </div>
+            <div class="flex gap-10 text-sm text-gray-500 font-bold uppercase tracking-widest">
+                <a href="#" class="hover:text-white">Design</a>
+                <a href="#" class="hover:text-white">Strategy</a>
+                <a href="#" class="hover:text-white">Contact</a>
+            </div>
+            <div class="text-gray-600 text-sm">
+                © 2026 Aspire Creative Agency.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

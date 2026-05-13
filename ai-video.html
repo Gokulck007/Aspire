@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Video Production | Aspire - Design, Strategy, & Growth</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --brand-primary: #0A0A0A; --brand-accent: #FF4D00; --brand-secondary: #FFFFFF; }
+        body { background-color: var(--brand-primary); color: var(--brand-secondary); font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .font-heading { font-family: 'Montserrat', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-header">
+        <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto">
+            <a href="preview.html" class="flex items-center gap-4">
+                <img src="logo.png" alt="Aspire Logo" class="h-10 w-auto">
+                <span class="text-2xl font-heading font-extrabold tracking-tighter text-white">ASPIRE</span>
+            </a>
+            <div class="hidden md:flex items-center gap-10 text-sm font-bold uppercase tracking-widest text-gray-400">
+                <a href="preview.html" class="hover:text-white transition-colors">Home</a>
+                <a href="about.html" class="hover:text-white transition-colors">About</a>
+                <a href="services.html" class="hover:text-white transition-colors">Services</a>
+                <a href="portfolio.html" class="hover:text-white transition-colors">Portfolio</a>
+                <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+                <a href="contact.html" class="bg-[#FF4D00] text-white px-6 py-2 rounded-full hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,77,0,0.3)]">Get Started</a>
+            </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-white" id="mobile-toggle">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden fixed inset-0 bg-black z-50 flex flex-col items-center justify-center gap-8 text-2xl font-bold uppercase tracking-widest transition-all">
+            <button class="absolute top-6 right-6 text-white" id="mobile-close">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <a href="preview.html" class="hover:text-[#FF4D00]">Home</a>
+            <a href="about.html" class="hover:text-[#FF4D00]">About</a>
+            <a href="services.html" class="hover:text-[#FF4D00]">Services</a>
+            <a href="portfolio.html" class="hover:text-[#FF4D00]">Portfolio</a>
+            <a href="contact.html" class="hover:text-[#FF4D00]">Contact</a>
+        </div>
+    </header>
+
+    <script>
+        const header = document.getElementById('main-header');
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileClose = document.getElementById('mobile-close');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { header.classList.add('glass', 'py-2'); } 
+            else { header.classList.remove('glass', 'py-2'); }
+        });
+
+        mobileToggle.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
+        mobileClose.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    </script>
+
+    <div class="h-24"></div>
+
+    <section class="py-24 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-heading font-extrabold mb-8">AI <span class="text-[#FF4D00]">Video</span></h1>
+            <p class="text-xl text-gray-400">Cinematic motion graphics and AI-driven 4K video production.</p>
+        </div>
+    </section>
+
+    <!-- Deep Dive Content -->
+    <section class="py-20 px-6">
+        <div class="max-w-4xl mx-auto space-y-10 text-gray-300 text-lg leading-relaxed text-left">
+            <h2 class="text-3xl font-bold text-white mb-6">The Future of Visual Storytelling</h2>
+            <p>We are currently living through the most significant shift in media production since the invention of the motion picture camera. Artificial intelligence is no longer a futuristic concept; it is actively rewriting the rules of what is possible in digital video. At Aspire, we have fully embraced this technological revolution. We do not just use AI to cut corners or save time; we leverage advanced AI motion technology to produce cinematic, breathtaking 4K video assets that were previously impossible to create without massive Hollywood-style budgets and months of production time.</p>
+
+            <h3 class="text-2xl font-bold text-[#FF4D00] mt-12 mb-6">Breaking the Boundaries of Traditional Production</h3>
+            <p>Traditional video production is inherently limited by physical reality. You are bound by the constraints of locations, weather, lighting, talent availability, and exorbitant equipment costs. If you want to shoot a commercial featuring a sports car driving across a futuristic alien landscape, or a product reveal floating in zero gravity, the logistics and costs can quickly become astronomical. AI video production shatters these physical limitations. By harnessing the power of generative models and advanced motion graphics engines, we can create absolutely anything you can imagine with photorealistic fidelity. Your imagination is the only limit.</p>
+
+            <h3 class="text-2xl font-bold text-[#FF4D00] mt-12 mb-6">Cinematic Quality at Digital Speed</h3>
+            <p>One of the most profound advantages of our AI-driven workflow is the sheer speed of execution. In the fast-paced world of digital marketing, agility is everything. A trend can go viral and fade into obscurity before a traditional production team has even finished storyboarding. Our pipeline allows us to rapidly prototype, generate, and refine high-end video assets in a fraction of the time. This means you can launch campaigns faster, respond to market shifts in real-time, and continuously test different creative variations to see what resonates best with your audience.</p>
+
+            <h3 class="text-2xl font-bold text-[#FF4D00] mt-12 mb-6">Hyper-Personalization and Scalability</h3>
+            <p>The true power of AI video isn't just in creating one spectacular hero video; it's in the ability to scale and personalize that video across countless variations. We can utilize AI to automatically generate dozens of different aspect ratios for various social media platforms, dynamically swap out background environments to appeal to different demographics, and even adjust the visual tone based on real-time ad performance data. This level of hyper-personalization ensures that your message is always highly relevant, drastically increasing viewer engagement and conversion rates.</p>
+
+            <h3 class="text-2xl font-bold text-[#FF4D00] mt-12 mb-6">Captivate Your Audience</h3>
+            <p>In an era where consumer attention spans are measured in milliseconds, standard stock footage and generic corporate talking heads simply do not cut it anymore. You need visuals that immediately disrupt the feed, grab the viewer by the collar, and refuse to let go. Our cinematic AI motion graphics are designed to do exactly that. We create visually arresting, highly dynamic content that demands attention and elevates your brand perception to the absolute highest tier. Step into the future of content creation with Aspire, and let us show you what is truly possible.</p>
+            
+            <div class="mt-16 text-center">
+                <a href="contact.html" class="inline-block bg-[#FF4D00] text-white px-10 py-5 rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,77,0,0.3)]">Explore AI Video Solutions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 px-6 border-t border-white/5 mt-20">
+        <div class="max-w-7xl mx-auto text-center text-gray-600">
+            © 2026 Aspire Creative Agency.
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Aspire - Design, Strategy, & Growth</title>
+    <meta name="description" content="Aspire offers premium creative services including Graphic Design, AI Video Production, Marketing Strategy, SEO, and Web Development.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --brand-primary: #0A0A0A; --brand-accent: #FF4D00; --brand-secondary: #FFFFFF; }
+        body { background-color: var(--brand-primary); color: var(--brand-secondary); font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .font-heading { font-family: 'Montserrat', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .service-card:hover { border-color: var(--brand-accent); transform: translateY(-5px); }
+        .text-accent { color: var(--brand-accent); }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-header">
+        <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto">
+            <a href="preview.html" class="flex items-center gap-4">
+                <img src="logo.png" alt="Aspire Logo" class="h-10 w-auto">
+                <span class="text-2xl font-heading font-extrabold tracking-tighter text-white">ASPIRE</span>
+            </a>
+            <div class="hidden md:flex items-center gap-10 text-sm font-bold uppercase tracking-widest text-gray-400">
+                <a href="preview.html" class="hover:text-white transition-colors">Home</a>
+                <a href="about.html" class="hover:text-white transition-colors">About</a>
+                <a href="services.html" class="hover:text-white transition-colors">Services</a>
+                <a href="portfolio.html" class="hover:text-white transition-colors">Portfolio</a>
+                <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+                <a href="contact.html" class="bg-[#FF4D00] text-white px-6 py-2 rounded-full hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,77,0,0.3)]">Get Started</a>
+            </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-white" id="mobile-toggle">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden fixed inset-0 bg-black z-50 flex flex-col items-center justify-center gap-8 text-2xl font-bold uppercase tracking-widest transition-all">
+            <button class="absolute top-6 right-6 text-white" id="mobile-close">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <a href="preview.html" class="hover:text-[#FF4D00]">Home</a>
+            <a href="about.html" class="hover:text-[#FF4D00]">About</a>
+            <a href="services.html" class="hover:text-[#FF4D00]">Services</a>
+            <a href="portfolio.html" class="hover:text-[#FF4D00]">Portfolio</a>
+            <a href="contact.html" class="hover:text-[#FF4D00]">Contact</a>
+        </div>
+    </header>
+
+    <script>
+        const header = document.getElementById('main-header');
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileClose = document.getElementById('mobile-close');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { header.classList.add('glass', 'py-2'); } 
+            else { header.classList.remove('glass', 'py-2'); }
+        });
+
+        mobileToggle.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
+        mobileClose.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    </script>
+
+    <div class="h-24"></div>
+
+    <!-- Services Hero -->
+    <section class="py-24 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-heading font-extrabold mb-8">Comprehensive <span class="text-[#FF4D00]">Solutions</span></h1>
+            <p class="text-xl text-gray-400">From initial design to global scale, we provide the technical and creative engine to elevate your brand.</p>
+        </div>
+    </section>
+
+    <!-- Introduction to Services -->
+    <section class="py-20 px-6 bg-[#050505]">
+        <div class="max-w-4xl mx-auto text-gray-300 space-y-10 leading-relaxed text-lg">
+            <h2 class="text-4xl md:text-5xl font-heading font-bold mb-12 text-white">The Intersection of Art and Science</h2>
+            
+            <p>Welcome to the engine room of your future growth. At Aspire, we do not view our services as isolated silos; rather, we see them as interconnected gears within a high-performance machine. In today’s highly competitive digital landscape, having a beautiful website with no traffic is just as detrimental as having incredible traffic driven to a confusing, ugly website. To achieve true market dominance, you need a holistic approach that seamlessly integrates high-end creative design with rigorous, data-backed marketing strategies and flawless technical execution.</p>
+
+            <h3 class="text-2xl font-bold text-[#FF4D00] mt-12 mb-6">Why Holistic Digital Growth Matters</h3>
+            <p>We often meet clients who have burned through their budgets hiring separate specialists—a freelance logo designer here, a boutique SEO agency there, and an outsourced web development team somewhere else. The result is almost always a fragmented brand identity and a disjointed user experience. The messaging doesn't match the visuals, and the technology doesn't support the marketing funnel. We eliminate this friction by providing a unified, comprehensive suite of services under one roof. When our graphic designers create a visual identity, they are already collaborating with our web developers to ensure it translates perfectly to a digital interface. When our AI video producers create an ad, they are working alongside our media buyers to ensure it's optimized for the exact platform it will run on.</p>
+
+            <h3 class="text-2xl font-bold text-[#FF4D00] mt-12 mb-6">Beyond Basic Execution</h3>
+            <p>We do not just execute tasks; we solve complex business problems. Every single project we take on begins with a deep, intensive discovery phase. We analyze your competitors, audit your current digital footprint, and interview your key stakeholders to understand the psychological drivers of your target audience. We believe that strategy must dictate design, not the other way around. This means we are not afraid to push back if we believe a requested feature won't actually serve your bottom line. We consider ourselves your strategic partners, deeply invested in your long-term success.</p>
+
+            <h3 class="text-2xl font-bold text-[#FF4D00] mt-12 mb-6">Engineering Trust Through Excellence</h3>
+            <p>Ultimately, everything we do—whether it's designing a sleek new logo, building a lightning-fast React application, or launching a multi-channel digital ad campaign—is engineered to build trust. Trust is the ultimate currency in business. If your audience doesn't trust you, they won't buy from you. Our premium, high-end aesthetics instantly signal authority and competence to your audience. Our frictionless user experiences demonstrate that you value their time. And our targeted marketing ensures that you are delivering exactly the right message to the right person at the exact right moment.</p>
+
+            <h3 class="text-2xl font-bold text-[#FF4D00] mt-12 mb-6">Ready to Scale?</h3>
+            <p>Explore our core service categories below to see exactly how we can help you scale. Whether you need a complete ground-up brand overhaul, a cutting-edge web application, or a high-converting digital marketing engine, we have the talent, the technology, and the tenacity to make it happen. Stop settling for fragmented solutions and average results. It is time to step into a new era of digital excellence. It is time to Aspire.</p>
+        </div>
+    </section>
+
+    <!-- Services List -->
+    <section class="py-20 px-6">
+        <div class="max-w-7xl mx-auto space-y-32">
+            
+            <!-- Service 1: Design -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-heading font-bold mb-6">01. Graphic Design & Branding</h2>
+                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                        Authoritative visual identities built on market strategy and psychological insights.
+                    </p>
+                    <ul class="grid grid-cols-2 gap-4 text-sm font-bold uppercase tracking-wider text-white/70">
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#FF4D00] rounded-full"></span> Logo Design</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#FF4D00] rounded-full"></span> Brand Guidelines</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#FF4D00] rounded-full"></span> Packaging</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#FF4D00] rounded-full"></span> Social Graphics</li>
+                    </ul>
+                </div>
+                <div class="glass aspect-video rounded-3xl overflow-hidden">
+                    <img src="graphic_design.png" alt="Graphic Design" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <!-- Service 2: AI Video -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center lg:flex-row-reverse">
+                <div class="lg:order-2">
+                    <h2 class="text-4xl font-heading font-bold mb-6">02. AI Video Production</h2>
+                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                        Cinematic 4K AI motion assets that capture attention like traditional video can't.
+                    </p>
+                    <ul class="grid grid-cols-2 gap-4 text-sm font-bold uppercase tracking-wider text-white/70">
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#FF4D00] rounded-full"></span> AI Motion Graphics</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#FF4D00] rounded-full"></span> Cinematic Renders</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#FF4D00] rounded-full"></span> Social Ads</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#FF4D00] rounded-full"></span> Product Reveal</li>
+                    </ul>
+                </div>
+                <div class="glass aspect-video rounded-3xl overflow-hidden lg:order-1">
+                    <img src="ai_video.png" alt="AI Video Production" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <!-- Service 3: Growth Engine -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-heading font-bold mb-6">03. Marketing & Strategy</h2>
+                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                        Data-driven growth engines turning traffic into high-value clients via advanced funnels.
+                    </p>
+                    <ul class="grid grid-cols-2 gap-4 text-sm font-bold uppercase tracking-wider text-white/70">
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#FF4D00] rounded-full"></span> Ad Management</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#FF4D00] rounded-full"></span> Funnel Design</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#FF4D00] rounded-full"></span> Growth Hacking</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#FF4D00] rounded-full"></span> Content Strategy</li>
+                    </ul>
+                </div>
+                <div class="glass aspect-video rounded-3xl overflow-hidden">
+                    <img src="marketing.png" alt="Marketing & Strategy" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <!-- Service 4: Web Dev -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center lg:flex-row-reverse">
+                <div class="lg:order-2">
+                    <h2 class="text-4xl font-heading font-bold mb-6">04. Next-Gen Web Development</h2>
+                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                        Ultra-fast digital architecture optimized for modern web and 2026 AI-search standards.
+                    </p>
+                    <ul class="grid grid-cols-2 gap-4 text-sm font-bold uppercase tracking-wider text-white/70">
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#FF4D00] rounded-full"></span> Modern Tech Stack</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#FF4D00] rounded-full"></span> AI-Search SEO</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#FF4D00] rounded-full"></span> Custom SaaS</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#FF4D00] rounded-full"></span> E-Commerce</li>
+                    </ul>
+                </div>
+                <div class="glass aspect-video rounded-3xl overflow-hidden lg:order-1">
+                    <img src="web_dev.png" alt="Web Development" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto text-center text-gray-600">
+            © 2026 Aspire Creative Agency.
+        </div>
+    </footer>
+
+</body>
+</html>

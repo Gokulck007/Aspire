@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Aspire</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --brand-primary: #0A0A0A; --brand-accent: #FF4D00; --brand-secondary: #FFFFFF; }
+        body { background-color: var(--brand-primary); color: var(--brand-secondary); font-family: 'Inter', sans-serif; }
+        .font-heading { font-family: 'Montserrat', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-header">
+        <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto">
+            <a href="preview.html" class="flex items-center gap-4">
+                <img src="logo.png" alt="Aspire Logo" class="h-10 w-auto">
+                <span class="text-2xl font-heading font-extrabold tracking-tighter text-white">ASPIRE</span>
+            </a>
+            <div class="hidden md:flex items-center gap-10 text-sm font-bold uppercase tracking-widest text-gray-400">
+                <a href="preview.html" class="hover:text-white transition-colors">Home</a>
+                <a href="about.html" class="hover:text-white transition-colors">About</a>
+                <a href="services.html" class="hover:text-white transition-colors">Services</a>
+                <a href="portfolio.html" class="hover:text-white transition-colors">Portfolio</a>
+                <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+                <a href="contact.html" class="bg-[#FF4D00] text-white px-6 py-2 rounded-full hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,77,0,0.3)]">Get Started</a>
+            </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-white" id="mobile-toggle">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden fixed inset-0 bg-black z-50 flex flex-col items-center justify-center gap-8 text-2xl font-bold uppercase tracking-widest transition-all">
+            <button class="absolute top-6 right-6 text-white" id="mobile-close">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <a href="preview.html" class="hover:text-[#FF4D00]">Home</a>
+            <a href="about.html" class="hover:text-[#FF4D00]">About</a>
+            <a href="services.html" class="hover:text-[#FF4D00]">Services</a>
+            <a href="portfolio.html" class="hover:text-[#FF4D00]">Portfolio</a>
+            <a href="contact.html" class="hover:text-[#FF4D00]">Contact</a>
+        </div>
+    </header>
+
+    <script>
+        const header = document.getElementById('main-header');
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileClose = document.getElementById('mobile-close');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { header.classList.add('glass', 'py-2'); } 
+            else { header.classList.remove('glass', 'py-2'); }
+        });
+
+        mobileToggle.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
+        mobileClose.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    </script>
+
+    <div class="h-24"></div>
+
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16">
+                <h1 class="text-5xl md:text-7xl font-heading font-extrabold mb-4">Graphic Design <span class="text-[#FF4D00]">Portfolio</span></h1>
+                <p class="text-xl text-gray-400">Elite branding, visual identity, and packaging systems.</p>
+            </div>
+
+            <div class="glass rounded-[3rem] overflow-hidden p-4">
+                <img src="portfolio_graphic_design.jpg" class="w-full h-auto rounded-[2rem]" alt="Full Graphic Design Portfolio Showcase">
+            </div>
+
+            <div class="mt-20 glass p-12 rounded-3xl mb-12">
+                <div class="max-w-4xl mx-auto space-y-8 text-gray-300 text-lg leading-relaxed text-left">
+                    <h2 class="text-3xl font-bold text-white mb-6">The Anatomy of a Masterpiece</h2>
+                    <p>When you browse our portfolio, you aren't just looking at a collection of pretty pictures; you are witnessing the visual manifestation of deep, psychological market strategies. Every single pixel, every color grade, and every typographic choice you see in these showcases was meticulously engineered to achieve a specific business objective. At Aspire, we believe that true graphic design is the perfect synergy between breathtaking aesthetics and measurable commercial viability. We don't design for other designers; we design for your customers.</p>
+
+                    <h3 class="text-2xl font-bold text-[#FF4D00] mt-10 mb-4">Case Study: The Luxury Rebrand</h3>
+                    <p>Take, for example, our recent work in the luxury consumer goods sector. The client approached us with a high-quality product but a brand identity that felt incredibly dated and generic. They were struggling to justify their premium price point to a modern audience. We didn't just tweak their logo. We completely deconstructed their brand architecture. We conducted extensive color psychology research, ultimately selecting a stark, minimalist palette of deep obsidian and brushed copper to instantly communicate exclusivity and high-end craftsmanship. We custom-designed a new typeface that blended classic serif authority with sleek, modern lines. The result? A 300% increase in perceived brand value and a total sell-out of their next product launch within 48 hours.</p>
+
+                    <h3 class="text-2xl font-bold text-[#FF4D00] mt-10 mb-4">The Science of Packaging</h3>
+                    <p>In the retail environment, your packaging is your final salesperson. It has precisely three seconds to capture a consumer's attention on a crowded shelf. Our approach to packaging design combines structural engineering with striking visual art. We consider the tactile experience—how the box feels in the hand, the sound it makes when opened, the unboxing journey from start to finish. We utilize premium materials, subtle embossing, and high-contrast finishes to ensure that when a customer holds your product, they feel an immediate sense of anticipation and absolute quality.</p>
+
+                    <h3 class="text-2xl font-bold text-[#FF4D00] mt-10 mb-4">Digital-First Identity Systems</h3>
+                    <p>While physical packaging is crucial, a modern brand must thrive in the digital ecosystem. A logo that looks incredible on a massive billboard might become completely illegible when scaled down to a tiny social media avatar. We architect "digital-first" identity systems. Every brand we create is rigorously stress-tested across all digital mediums—from massive 4K desktop displays to the smallest mobile screens. We create responsive logo systems that adapt dynamically to their environment, ensuring that your brand maintains its impact and authority no matter where your audience encounters it.</p>
+
+                    <h3 class="text-2xl font-bold text-[#FF4D00] mt-10 mb-4">The Bottom Line</h3>
+                    <p>Our portfolio is a testament to our unwavering commitment to excellence. We do not accept average. We do not settle for "good enough." We obsess over the micro-details so that you can dominate the macro-market. We invite you to study our work closely. Look past the surface-level beauty and see the strategic intelligence working underneath. This is what it looks like when art meets commerce. This is Aspire.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="glass p-12 rounded-3xl">
+                    <h3 class="text-3xl font-bold mb-6">Strategic Design</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Every project in this showcase was built with a specific market objective. From luxury packaging to modern tech branding, we ensure every pixel serves your business goals.
+                    </p>
+                </div>
+                <div class="glass p-12 rounded-3xl">
+                    <h3 class="text-3xl font-bold mb-6 text-[#FF4D00]">Ready to be next?</h3>
+                    <p class="text-gray-400 mb-8">Let's build your brand's master portfolio today.</p>
+                    <a href="contact.html" class="inline-block bg-[#FF4D00] text-white px-10 py-4 rounded-full font-bold hover:scale-105 transition-all">Start Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto text-center text-gray-600">
+            © 2026 Aspire Creative Agency.
+        </div>
+    </footer>
+
+</body>
+</html>

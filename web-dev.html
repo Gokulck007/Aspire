@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development | Aspire - Design, Strategy, & Growth</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --brand-primary: #0A0A0A; --brand-accent: #FF4D00; --brand-secondary: #FFFFFF; }
+        body { background-color: var(--brand-primary); color: var(--brand-secondary); font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .font-heading { font-family: 'Montserrat', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-header">
+        <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto">
+            <a href="preview.html" class="flex items-center gap-4">
+                <img src="logo.png" alt="Aspire Logo" class="h-10 w-auto">
+                <span class="text-2xl font-heading font-extrabold tracking-tighter text-white">ASPIRE</span>
+            </a>
+            <div class="hidden md:flex items-center gap-10 text-sm font-bold uppercase tracking-widest text-gray-400">
+                <a href="preview.html" class="hover:text-white transition-colors">Home</a>
+                <a href="about.html" class="hover:text-white transition-colors">About</a>
+                <a href="services.html" class="hover:text-white transition-colors">Services</a>
+                <a href="portfolio.html" class="hover:text-white transition-colors">Portfolio</a>
+                <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+                <a href="contact.html" class="bg-[#FF4D00] text-white px-6 py-2 rounded-full hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,77,0,0.3)]">Get Started</a>
+            </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-white" id="mobile-toggle">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden fixed inset-0 bg-black z-50 flex flex-col items-center justify-center gap-8 text-2xl font-bold uppercase tracking-widest transition-all">
+            <button class="absolute top-6 right-6 text-white" id="mobile-close">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <a href="preview.html" class="hover:text-[#FF4D00]">Home</a>
+            <a href="about.html" class="hover:text-[#FF4D00]">About</a>
+            <a href="services.html" class="hover:text-[#FF4D00]">Services</a>
+            <a href="portfolio.html" class="hover:text-[#FF4D00]">Portfolio</a>
+            <a href="contact.html" class="hover:text-[#FF4D00]">Contact</a>
+        </div>
+    </header>
+
+    <script>
+        const header = document.getElementById('main-header');
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileClose = document.getElementById('mobile-close');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { header.classList.add('glass', 'py-2'); } 
+            else { header.classList.remove('glass', 'py-2'); }
+        });
+
+        mobileToggle.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
+        mobileClose.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    </script>
+
+    <div class="h-24"></div>
+
+    <section class="py-24 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-heading font-extrabold mb-8">Web <span class="text-[#FF4D00]">Development</span></h1>
+            <p class="text-xl text-gray-400">High-performance architecture optimized for the future of AI-search.</p>
+        </div>
+    </section>
+
+    <!-- Deep Dive Content -->
+    <section class="py-20 px-6">
+        <div class="max-w-4xl mx-auto space-y-10 text-gray-300 text-lg leading-relaxed text-left">
+            <h2 class="text-3xl font-bold text-white mb-6">Building for the Modern Web</h2>
+            <p>Your website is no longer just a digital business card; it is the central nervous system of your entire online operation. It is your most tireless salesperson, working 24/7 to educate prospects, process transactions, and represent your brand to the global market. At Aspire, we do not build simple template websites. We architect high-performance, next-generation digital experiences that are custom-built to handle massive traffic, convert highly qualified leads, and dominate search engine rankings. We build the digital infrastructure your business needs to scale without friction.</p>
+
+            <h3 class="text-2xl font-bold text-[#FF4D00] mt-12 mb-6">Uncompromising Speed and Performance</h3>
+            <p>In the modern web, speed is not a luxury; it is an absolute necessity. Human attention spans have plummeted, and if your website takes more than a few seconds to load, you have already lost the customer. Furthermore, major search engines like Google now actively penalize slow-loading websites, burying them on page two or worse. We utilize cutting-edge front-end frameworks like React and Next.js to build incredibly lightweight, ultra-fast applications. We obsessively optimize every single line of code, compress every image, and leverage global content delivery networks to ensure your website loads instantly, regardless of where your customer is located.</p>
+
+            <h3 class="text-2xl font-bold text-[#FF4D00] mt-12 mb-6">Optimized for 2026 AI-Search Standards</h3>
+            <p>The way consumers search for information is fundamentally changing. The rise of AI-powered search engines and large language models means that traditional SEO tactics are rapidly becoming obsolete. It is no longer enough to simply stuff keywords onto a page. Your website architecture must be semantically structured so that AI bots can easily crawl, understand, and index your content contextually. Our development team stays on the absolute bleeding edge of search engine algorithm updates, building websites with an advanced technical foundation that guarantees maximum visibility in an AI-driven search landscape.</p>
+
+            <h3 class="text-2xl font-bold text-[#FF4D00] mt-12 mb-6">Seamless User Experiences (UX)</h3>
+            <p>A website can be incredibly fast and beautifully designed, but if it is difficult to use, it will fail. We employ rigorous User Experience (UX) and User Interface (UI) design principles to create intuitive, frictionless pathways for your customers. We map out precise user journeys, minimizing the number of clicks required to reach a conversion point. Whether we are building a complex custom SaaS application or a high-volume e-commerce storefront, our primary goal is to make the user's interaction with your brand as effortless and enjoyable as humanly possible.</p>
+
+            <h3 class="text-2xl font-bold text-[#FF4D00] mt-12 mb-6">Scalable and Secure Architecture</h3>
+            <p>As your business grows, your digital infrastructure needs to be able to grow with it. We build highly scalable architectures that can handle sudden spikes in traffic without breaking a sweat. Moreover, we take digital security incredibly seriously. We implement robust, enterprise-grade security protocols to protect both your proprietary business data and your customers' sensitive information. From custom API integrations to complex database management, Aspire provides the bulletproof technical foundation you need to dominate your industry with absolute confidence.</p>
+            
+            <div class="mt-16 text-center">
+                <a href="contact.html" class="inline-block bg-[#FF4D00] text-white px-10 py-5 rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,77,0,0.3)]">Start Building Your Platform</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 px-6 border-t border-white/5 mt-20">
+        <div class="max-w-7xl mx-auto text-center text-gray-600">
+            © 2026 Aspire Creative Agency.
+        </div>
+    </footer>
+
+</body>
+</html>

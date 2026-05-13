@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Aspire</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --brand-primary: #0A0A0A; --brand-accent: #FF4D00; --brand-secondary: #FFFFFF; }
+        body { background-color: var(--brand-primary); color: var(--brand-secondary); font-family: 'Inter', sans-serif; }
+        .font-heading { font-family: 'Montserrat', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .btn-primary { background-color: var(--brand-accent); padding: 1rem 3rem; border-radius: 9999px; font-weight: 700; transition: all 0.3s; width: 100%; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(255, 77, 0, 0.3); }
+        input, textarea { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 1rem; padding: 1rem; color: white; outline: none; }
+        input:focus, textarea:focus { border-color: var(--brand-accent); }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-header">
+        <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto">
+            <a href="preview.html" class="flex items-center gap-4">
+                <img src="logo.png" alt="Aspire Logo" class="h-10 w-auto">
+                <span class="text-2xl font-heading font-extrabold tracking-tighter text-white">ASPIRE</span>
+            </a>
+            <div class="hidden md:flex items-center gap-10 text-sm font-bold uppercase tracking-widest text-gray-400">
+                <a href="preview.html" class="hover:text-white transition-colors">Home</a>
+                <a href="about.html" class="hover:text-white transition-colors">About</a>
+                <a href="services.html" class="hover:text-white transition-colors">Services</a>
+                <a href="portfolio.html" class="hover:text-white transition-colors">Portfolio</a>
+                <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+                <a href="contact.html" class="bg-[#FF4D00] text-white px-6 py-2 rounded-full hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,77,0,0.3)]">Get Started</a>
+            </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-white" id="mobile-toggle">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden fixed inset-0 bg-black z-50 flex flex-col items-center justify-center gap-8 text-2xl font-bold uppercase tracking-widest transition-all">
+            <button class="absolute top-6 right-6 text-white" id="mobile-close">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <a href="preview.html" class="hover:text-[#FF4D00]">Home</a>
+            <a href="about.html" class="hover:text-[#FF4D00]">About</a>
+            <a href="services.html" class="hover:text-[#FF4D00]">Services</a>
+            <a href="portfolio.html" class="hover:text-[#FF4D00]">Portfolio</a>
+            <a href="contact.html" class="hover:text-[#FF4D00]">Contact</a>
+        </div>
+    </header>
+
+    <script>
+        const header = document.getElementById('main-header');
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileClose = document.getElementById('mobile-close');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { header.classList.add('glass', 'py-2'); } 
+            else { header.classList.remove('glass', 'py-2'); }
+        });
+
+        mobileToggle.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
+        mobileClose.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    </script>
+
+    <div class="h-24"></div> <!-- Spacer -->
+
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
+            <div>
+                <h1 class="text-5xl md:text-7xl font-heading font-extrabold mb-8">Let's <span class="text-[#FF4D00]">Ignite</span> Your Brand.</h1>
+                <p class="text-xl text-gray-400 mb-12">
+                    Ready to elevate your digital presence? Reach out and let's discuss how we can engineer your growth.
+                </p>
+                
+                <div class="space-y-8">
+                    <div>
+                        <h4 class="text-xs uppercase tracking-widest text-[#FF4D00] font-bold mb-2">Our Office</h4>
+                        <p class="text-xl">Creative District, Innovation Way<br>Los Angeles, CA</p>
+                    </div>
+                    <div>
+                        <h4 class="text-xs uppercase tracking-widest text-[#FF4D00] font-bold mb-2">Email Us</h4>
+                        <p class="text-xl">hello@aspire.agency</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass p-10 rounded-[3rem]">
+                <form class="flex flex-col gap-6">
+                    <div class="flex flex-col gap-2">
+                        <label class="text-xs uppercase tracking-widest font-bold text-gray-500">Full Name</label>
+                        <input type="text" placeholder="John Doe">
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label class="text-xs uppercase tracking-widest font-bold text-gray-500">Email Address</label>
+                        <input type="email" placeholder="john@example.com">
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label class="text-xs uppercase tracking-widest font-bold text-gray-500">How can we help?</label>
+                        <textarea rows="5" placeholder="Tell us about your project..."></textarea>
+                    </div>
+                    <button type="button" class="btn-primary mt-4">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Partner With Us -->
+    <section class="py-20 px-6 bg-[#050505]">
+        <div class="max-w-4xl mx-auto space-y-10 text-gray-300 text-lg leading-relaxed text-left">
+            <h2 class="text-3xl font-bold text-white mb-6">The Aspire Partnership Difference</h2>
+            <p>Choosing the right creative and technical agency is one of the most critical decisions your business will make. You aren't just hiring a vendor to complete a task; you are selecting a strategic partner who will have direct influence over your brand's public perception and its ultimate commercial viability. At Aspire, we do not take this responsibility lightly. When you fill out the contact form above, you are taking the first step toward fundamentally transforming your digital presence. But what exactly happens after you hit "Send Message," and why should you entrust your brand's future to us?</p>
+
+            <h3 class="text-2xl font-bold text-[#FF4D00] mt-10 mb-4">A Consultative, Empathy-First Approach</h3>
+            <p>The first thing you will experience is our consultative approach. We don't believe in high-pressure sales tactics or cookie-cutter solutions. Our initial conversation will be a deep dive into your business. We want to understand your origin story, your current pain points, and your wildest ambitions. We will ask probing questions about your target audience, your competitors, and your past marketing efforts. We do this because we cannot build a custom solution until we thoroughly understand the specific problem we are trying to solve. Empathy is the cornerstone of our client onboarding process. We want to see your business through your eyes.</p>
+
+            <h3 class="text-2xl font-bold text-[#FF4D00] mt-10 mb-4">Transparent and Collaborative Workflows</h3>
+            <p>One of the most common complaints we hear from clients who have worked with other agencies is a lack of transparency. Projects go into a "black box," and weeks go by without a meaningful update. At Aspire, we shatter that black box. We utilize advanced project management systems and maintain open, continuous lines of communication. You will have full visibility into our process, from initial wireframes and mood boards to final code deployment and ad campaign launches. We consider you a core member of the project team, and your feedback is actively solicited at every critical milestone.</p>
+
+            <h3 class="text-2xl font-bold text-[#FF4D00] mt-10 mb-4">An Obsession with Measurable Results</h3>
+            <p>Beautiful design and elegant code are only half the battle. If our work doesn't move the needle on your bottom line, we haven't done our job. We are ruthlessly focused on measurable outcomes. Before a project begins, we establish clear Key Performance Indicators (KPIs) tailored to your specific goals—whether that's increasing organic traffic by 50%, doubling your e-commerce conversion rate, or generating a specific number of highly qualified leads per month. We build robust analytics dashboards so you can track our progress in real-time. We hold ourselves completely accountable to these metrics.</p>
+
+            <h3 class="text-2xl font-bold text-[#FF4D00] mt-10 mb-4">Long-Term Strategic Alignment</h3>
+            <p>We are not interested in one-off projects or transactional relationships. Our goal is to become your long-term strategic growth partner. The digital landscape is constantly shifting, with new technologies, algorithms, and consumer behaviors emerging daily. We act as your digital navigators, constantly monitoring the horizon and proactively suggesting new strategies to keep you ahead of the curve. As your business scales and evolves, we scale and evolve right alongside you, adapting our services to meet your changing needs. We succeed when you succeed. Reach out today, and let's start building a partnership defined by mutual trust and extraordinary growth.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto text-center text-gray-600">
+            © 2026 Aspire Creative Agency.
+        </div>
+    </footer>
+
+</body>
+</html>
