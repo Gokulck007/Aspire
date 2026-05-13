@@ -69,7 +69,7 @@
         }
     </style>
 </head>
-<body>
+<body class="overflow-x-hidden">
 
     <!-- Navigation Header -->
     <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-header">
@@ -92,7 +92,7 @@
             </button>
         </nav>
         <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu" class="hidden fixed inset-0 bg-black z-50 flex flex-col items-center justify-center gap-8 text-2xl font-bold uppercase tracking-widest transition-all">
+        <div id="mobile-menu" class="fixed inset-0 z-50 flex flex-col items-center justify-center gap-8 text-2xl font-bold uppercase tracking-widest transition-all duration-500 opacity-0 pointer-events-none bg-black/95 backdrop-blur-xl">
             <button class="absolute top-6 right-6 text-white" id="mobile-close">
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
@@ -118,8 +118,14 @@
             }
         });
 
-        mobileToggle.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
-        mobileClose.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        mobileToggle.addEventListener('click', () => {
+            mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = 'hidden';
+        });
+        mobileClose.addEventListener('click', () => {
+            mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = '';
+        });
     </script>
 
     <!-- Hero Section -->
@@ -136,7 +142,7 @@
                 </svg>
             </div>
             
-            <h1 class="text-5xl md:text-8xl font-heading font-extrabold mb-6 tracking-tight">
+            <h1 class="text-4xl md:text-7xl lg:text-8xl font-heading font-extrabold mb-6 tracking-tight">
                 Design. <span class="text-[#FF4D00]">Strategize.</span> Elevate.
             </h1>
             
@@ -156,7 +162,7 @@
     <section class="py-24 px-6 bg-[#0A0A0A]">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-6xl font-heading font-bold mb-4">Core Expertise</h2>
+                <h2 class="text-3xl md:text-5xl font-heading font-bold mb-4">Core Expertise</h2>
                 <p class="text-gray-400 max-w-2xl mx-auto">High-end creative solutions tailored for brands ready to scale.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -187,7 +193,7 @@
     <!-- Portfolio Section -->
     <section class="py-32 px-6 bg-[#050505]">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl md:text-6xl font-heading font-bold mb-16">Graphic Design Showcase</h2>
+            <h2 class="text-3xl md:text-5xl font-heading font-bold mb-16">Graphic Design Showcase</h2>
             
             <div class="glass rounded-3xl overflow-hidden group portfolio-item relative min-h-[800px]">
                 <img src="portfolio_graphic_design.jpg" class="w-full h-auto opacity-80 group-hover:opacity-100 transition-opacity duration-700" alt="Graphic Design Portfolio">
@@ -207,7 +213,7 @@
     <section class="py-32 px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
-                <h2 class="text-4xl md:text-6xl font-heading font-bold mb-8">Growth Engine</h2>
+                <h2 class="text-3xl md:text-5xl font-heading font-bold mb-8">Growth Engine</h2>
                 <p class="text-xl text-gray-400 mb-12 leading-relaxed">
                     We build the strategic layer that ensures your brand doesn't just look good, but dominates its market through data-driven SEO and high-conversion ad strategies.
                 </p>
@@ -239,7 +245,7 @@
     <!-- Our Story & Vision -->
     <section class="py-32 px-6 bg-[#0A0A0A]">
         <div class="max-w-4xl mx-auto text-gray-300 space-y-10 leading-relaxed text-lg">
-            <h2 class="text-4xl md:text-6xl font-heading font-bold mb-12 text-white">The Adspire Philosophy: Why We Do What We Do</h2>
+            <h2 class="text-3xl md:text-5xl font-heading font-bold mb-12 text-white">The Adspire Philosophy: Why We Do What We Do</h2>
             
             <p>Welcome to Adspire, where we believe that your digital presence is the ultimate reflection of your brand's true potential. In today's hyper-competitive and rapidly evolving digital landscape, it is no longer enough to simply exist online. Your brand must make a statement. It needs to command attention, build unshakable trust, and convert passive observers into fiercely loyal advocates. That is exactly what we do. We don't just build websites or run ads; we engineer comprehensive digital ecosystems designed to elevate your business to unprecedented heights. Whether you are a startup looking to make your mark or an established enterprise ready for your next phase of exponential growth, our team of dedicated experts is here to turn your vision into a stunning reality.</p>
 

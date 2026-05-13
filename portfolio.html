@@ -13,7 +13,7 @@
         .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
     </style>
 </head>
-<body>
+<body class="overflow-x-hidden">
 
     <!-- Navigation Header -->
     <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-header">
@@ -36,7 +36,7 @@
             </button>
         </nav>
         <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu" class="hidden fixed inset-0 bg-black z-50 flex flex-col items-center justify-center gap-8 text-2xl font-bold uppercase tracking-widest transition-all">
+        <div id="mobile-menu" class="fixed inset-0 z-50 flex flex-col items-center justify-center gap-8 text-2xl font-bold uppercase tracking-widest transition-all duration-500 opacity-0 pointer-events-none bg-black/95 backdrop-blur-xl">
             <button class="absolute top-6 right-6 text-white" id="mobile-close">
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
@@ -59,8 +59,14 @@
             else { header.classList.remove('glass', 'py-2'); }
         });
 
-        mobileToggle.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
-        mobileClose.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        mobileToggle.addEventListener('click', () => {
+            mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = 'hidden';
+        });
+        mobileClose.addEventListener('click', () => {
+            mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = '';
+        });
     </script>
 
     <div class="h-24"></div>
@@ -68,7 +74,7 @@
     <section class="py-24 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="mb-16">
-                <h1 class="text-5xl md:text-7xl font-heading font-extrabold mb-4">Graphic Design <span class="text-[#FF4D00]">Portfolio</span></h1>
+                <h1 class="text-3xl md:text-5xl font-heading font-extrabold mb-4">Graphic Design <span class="text-[#FF4D00]">Portfolio</span></h1>
                 <p class="text-xl text-gray-400">Elite branding, visual identity, and packaging systems.</p>
             </div>
 
