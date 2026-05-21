@@ -90,18 +90,19 @@
                 <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
             </button>
         </nav>
-        <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu" class="fixed inset-0 z-50 flex flex-col items-center justify-center gap-8 text-2xl font-bold uppercase tracking-widest transition-all duration-500 opacity-0 pointer-events-none bg-black/95 backdrop-blur-xl">
-            <button class="absolute top-6 right-6 text-white" id="mobile-close">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-            </button>
-            <a href="index.html" class="hover:text-[#FF4D00]">Home</a>
-            <a href="about.html" class="hover:text-[#FF4D00]">About</a>
-            <a href="services.html" class="hover:text-[#FF4D00]">Services</a>
-            <a href="portfolio.html" class="hover:text-[#FF4D00]">Portfolio</a>
-            <a href="contact.html" class="hover:text-[#FF4D00]">Contact</a>
-        </div>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[100] flex flex-col items-center justify-center gap-8 text-2xl font-bold uppercase tracking-widest transition-all duration-500 opacity-0 pointer-events-none bg-black/95 backdrop-blur-xl">
+        <button class="absolute top-6 right-6 text-white" id="mobile-close">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <a href="index.html" class="hover:text-[#FF4D00]">Home</a>
+        <a href="about.html" class="hover:text-[#FF4D00]">About</a>
+        <a href="services.html" class="hover:text-[#FF4D00]">Services</a>
+        <a href="portfolio.html" class="hover:text-[#FF4D00]">Portfolio</a>
+        <a href="contact.html" class="hover:text-[#FF4D00]">Contact</a>
+    </div>
 
         <script>
         const header = document.getElementById('main-header');
